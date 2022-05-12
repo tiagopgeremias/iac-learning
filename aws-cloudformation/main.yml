@@ -1,0 +1,19 @@
+Resources:
+  SimpleEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      KeyName: key_learning_terraform
+      ImageId: ami-09d56f8956ab235b3
+      InstanceType: t2.micro
+      SecurityGroupIds:
+        - sg_learning_terraform
+      Tags:
+        - Key: Name
+          Value: server002
+        - Key: Environment
+          Value: staging
+Outputs:
+  PublicIp:
+    Description: Get public IP
+    Value: !GetAtt SimpleEC2Instance.PublicIp
+  

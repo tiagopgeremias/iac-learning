@@ -16,4 +16,6 @@ Outputs:
   PublicIp:
     Description: Get public IP
     Value: !GetAtt SimpleEC2Instance.PublicIp
-  
+  ServerAddress:
+    Description: Get public DNS
+    Value: !GetAtt SimpleEC2Instance.PublicDnsName

@@ -14,12 +14,12 @@ pipeline {
         
         stage('Tag') {
             steps {
-                
+                sshagent(['github-credentials-ssh']){
                     sh 'git config --global user.email "tiagopgeremias@gmail.com"'
                     sh 'git config --global user.name "Tiago Geremias"'
                     sh 'git tag -a v${BUILD_NUMBER} -f -m "Jenkins Build #${BUILD_NUMBER}"'
                     sh 'git push origin v${BUILD_NUMBER}'
-                
+                }
             }
         }
         

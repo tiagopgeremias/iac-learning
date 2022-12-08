@@ -14,11 +14,11 @@ pipeline {
         
         stage('Tag') {
             steps {
-                withCredentials([string(credentialsId: 'github-credentials')]) {
+                
                     sh 'git config --global user.email "tiagopgeremias@gmail.com"'
                     sh 'git config --global user.name "Tiago Geremias"'
                     sh 'git tag -a -f -m Jenkins Build #20 jenkins-Teste-GIT-20'
-                }
+                
             }
         }
         

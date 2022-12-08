@@ -17,7 +17,8 @@ pipeline {
                 
                     sh 'git config --global user.email "tiagopgeremias@gmail.com"'
                     sh 'git config --global user.name "Tiago Geremias"'
-                    sh 'git tag -a -f -m Jenkins Build #20 jenkins-Teste-GIT-20'
+                    sh 'git tag -a v${BUILD_NUMBER} -f -m "Jenkins Build #${BUILD_NUMBER}"'
+                    sh 'git push origin v${BUILD_NUMBER}'
                 
             }
         }
